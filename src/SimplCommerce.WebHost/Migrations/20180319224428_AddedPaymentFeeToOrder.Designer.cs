@@ -11,9 +11,10 @@ using System;
 namespace SimplCommerce.WebHost.Migrations
 {
     [DbContext(typeof(SimplDbContext))]
-    partial class SimplDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180319224428_AddedPaymentFeeToOrder")]
+    partial class AddedPaymentFeeToOrder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -607,9 +608,9 @@ namespace SimplCommerce.WebHost.Migrations
 
                     b.Property<string>("Phone");
 
-                    b.Property<long>("StateOrProvinceId");
+                    b.Property<string>("PostalCode");
 
-                    b.Property<string>("ZipCode");
+                    b.Property<long>("StateOrProvinceId");
 
                     b.HasKey("Id");
 
@@ -655,9 +656,9 @@ namespace SimplCommerce.WebHost.Migrations
 
                     b.Property<bool>("IsDistrictEnabled");
 
-                    b.Property<bool>("IsShippingEnabled");
+                    b.Property<bool>("IsPostalCodeEnabled");
 
-                    b.Property<bool>("IsZipCodeEnabled");
+                    b.Property<bool>("IsShippingEnabled");
 
                     b.Property<string>("Name");
 
@@ -1288,9 +1289,9 @@ namespace SimplCommerce.WebHost.Migrations
 
                     b.Property<string>("Phone");
 
-                    b.Property<long>("StateOrProvinceId");
+                    b.Property<string>("PostalCode");
 
-                    b.Property<string>("ZipCode");
+                    b.Property<long>("StateOrProvinceId");
 
                     b.HasKey("Id");
 
@@ -1831,8 +1832,6 @@ namespace SimplCommerce.WebHost.Migrations
                     b.Property<long?>("StateOrProvinceId");
 
                     b.Property<long>("TaxClassId");
-
-                    b.Property<string>("ZipCode");
 
                     b.HasKey("Id");
 
